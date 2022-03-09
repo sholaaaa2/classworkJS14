@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Піцерія Domino's Pizza</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Styles/styles.css">
+    <link rel="icon" href="./Pizza_pictures/klassicheskij-bortik_1556622914630.png">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+                <a href="index.html"><img id="logo" src="Pizza_pictures/Carlo.png" alt="Логотип Папа Карло"></a>
+            <nav>
+                <ul>
+                    <li>Конструктор піцци</li>
+                    <li>Картопляне меню</li>
+                    <li>Салати</li>
+                    <li>Напої</li>
+                    <li>Доставка</li>
+                    <li>Зворотній зв'язок</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+      <div class="slider-container">
+        <button id="prev"><</button>
+        <div id="slider">
+          <img src="./img/1.jpg" alt="1">
+          <img src="./img/2.jpg" alt="2">
+          <img src="./img/3.jpg" alt="3">
+        </div>
+        <button id="next">></button>
+      </div>
+
+
+        <h1>Збери піццу своєї мрії</h1>
+        <sub>перетягни всi необхiднi iнгредiєнти</sub>
+        <div id="banner">Отримай знижку 30%!<br><button>Отримати</button></div>
+        <h3>Розмiр:</h3>
+        <form id='pizza' action="">
+            <label class="radio"><input type="radio" class="radioIn" id="small" name="size" value="small"><span class="fakeRadio"></span><span>Маленька</span></label>
+            <label class="radio"><input type="radio" class="radioIn" id="mid" name="size" value="mid"><span class="fakeRadio"></span><span>Середня</span></label>
+            <label class="radio"><input type="radio" class="radioIn" id="big" name="size" value="big" checked="true"><span class="fakeRadio"></span><span>Велика</span></label>
+        </form>
+        <div class="table-wrapper">
+            <div data-drop class="table">
+                <img src="Pizza_pictures/klassicheskij-bortik_1556622914630.png" alt="Корж класичний">
+            </div>
+            <div class="ingridients">
+                <h3>Соуси:</h3>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="sauceClassic" src="Pizza_pictures/sous-klassicheskij_1557758736353.png" alt="">
+                    <span>Кетчуп</span>
+                </div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="sauceBBQ" src="Pizza_pictures/sous-bbq_155679418013.png" alt="">
+                    <span>BBQ</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="sauceRikotta" src="Pizza_pictures/sous-rikotta_1556623391103.png" alt="">
+                    <span>Рiкотта</span></div>
+                <h3>Топінги:</h3>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="moc1" src="Pizza_pictures/mocarela_1556623220308.png" alt="">
+                    <span>Сир звичайний</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="moc2" src="Pizza_pictures/mocarela_1556785182818.png" alt="">
+                    <span>Сир фета</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="moc3" src="Pizza_pictures/mocarela_1556785198489.png" alt="">
+                    <span>Моцарелла</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="telya" src="Pizza_pictures/telyatina_1556624025747.png" alt="">
+                    <span>Телятина</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="vetch1" src="Pizza_pictures/vetchina.png" alt="">
+                    <span>Помiдори</span></div>
+                <div>
+                    <img draggable="true" data-added="false" class="draggable" id="vetch2" src="Pizza_pictures/vetchina_1556623556129.png" alt="">
+                    <span>Гриби</span></div>
+            </div>
+        </div>
+        <div class="result">
+            <div class="price">Цiна:<p></p></div>
+            <div class="sauces">Соуси:<p></p></div>
+            <div class="topings">Топiнги:<p></p></div>
+        </div>
+    </main>
+    <footer>
+        <h2>Пiдтверди замовлення</h2>
+        <sub>введи данi i пiдтверди замовлення</sub>
+        <form name="info" method="POST" action="./php/mail.php">
+            <div class="grid">
+                <label for="name">Ваше ім'я</label>
+                <div>
+                    <input placeholder="Iм'я" data-msg="Некоректно введено ім'я" name="name" type="text">
+                    <div id="name" class="error_ms"></div>
+                </div>
+                <label for="phone">Номер телефону</label>
+                <div>
+                    <input placeholder="+380505050500" data-msg="Некоректно введено телефон" name="phone" type="tel">
+                    <div id="phone" class="error_ms"></div>
+                </div>
+                <label for="email">Електронна пошта</label>
+                <div>
+                    <input placeholder="email@email.com" data-msg="Некоректно введена пошта" name="email" type="email">
+                    <div id="email" class="error_ms"></div>
+                </div>
+                <input class='button' name="cancel" type="reset" value="Зкинути">
+                <input class='button' name="btnSubmit" type="submit" value="Підтвердити замовлення >>">
+            </div>
+        </form>
+        <address>© 2002–2020 Мережа піцерій Domino!</address>
+    </footer>
+    <script src="./Script/jquery.js"></script>
+    <script src="./Script/pizzascript.js" charset="utf-8"></script>
+
+</body>
+
+</html>
